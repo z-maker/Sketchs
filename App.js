@@ -1,13 +1,23 @@
+console.disableYellowBox = true
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import { FirebaseApp } from './src/services/firebase/firebase_app';
+import { ApplicationContext } from './src/components/providers/ApplicationContext';
+import Navigation from './src/navigations/Navigation';
+
+
 
 export default function App() {
+
+  useEffect(() => {
+
+  })
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <ApplicationContext>
+      <Navigation />
+    </ApplicationContext>
   );
 }
 
