@@ -1,7 +1,7 @@
 import React from 'react'
 import { StyleSheet, View } from 'react-native'
 import { Text } from 'react-native-elements'
-import { Typography } from '../../styles'
+import { Typography, ColorProvider } from '../../styles'
 
 export default function TextView(props) {
 
@@ -24,7 +24,8 @@ const getTextStyle = (props) => {
 
 const styles = StyleSheet.create({
     text:{
-        fontFamily:Typography.FONT_FAMILY_REGULAR
+        fontFamily:Typography.FONT_FAMILY_REGULAR,
+        color:ColorProvider.scheme.textColor
     },
     textCenter:{
         textAlign:"center"

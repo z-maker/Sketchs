@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
         marginVertical:Spacing.VERTICAL_MARGIN
     },
     buttonStyle:{
-        backgroundColor:ColorProvider.darkColors.accent,
+        backgroundColor:ColorProvider.scheme.accent,
         borderRadius:AppDimensions.INPUT_TEXT_RADIUS
     }
 })

@@ -19,7 +19,7 @@ export default function EditText(props) {
                 placeholder={hint}
                 {...props}
                 onChangeText={onTextChange}
-                placeholderTextColor={ColorProvider.darkColors.inputTextHint}
+                placeholderTextColor={ColorProvider.scheme.inputTextHint}
             />
         </View>
     )
@@ -27,7 +27,7 @@ export default function EditText(props) {
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: ColorProvider.darkColors.inputTextBackground,
+        backgroundColor: ColorProvider.scheme.inputTextBackground,
         borderRadius: AppDimensions.INPUT_TEXT_RADIUS,
         elevation: AppDimensions.INPUT_ELEVATION,
         marginVertical:Spacing.VERTICAL_MARGIN
@@ -37,6 +37,6 @@ const styles = StyleSheet.create({
         margin: 10,
         marginHorizontal: 20,
         fontFamily: Typography.FONT_FAMILY_REGULAR,
-        color: ColorProvider.darkColors.textColor,
+        color: ColorProvider.scheme.textColor,
     }
 })
