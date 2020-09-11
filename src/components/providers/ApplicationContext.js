@@ -1,7 +1,7 @@
 import React, { useState, useEffect, createContext } from 'react'
 
 import * as firebase from 'firebase'
-import { ColorProvider } from '../../styles';
+import {UserModel} from '../../services/model'
 
 export const AppContext = createContext();
 
@@ -10,12 +10,19 @@ export const ApplicationContext = ({ children }) => {
     const [appContext, setAppContext] = useState({
         user_data: null,
         isLogged: false,
-        theme:ColorProvider.getDarkScheme()
+        isSet:false,
+        theme: ""
     });
 
     useEffect(() => {
-        
+        firebase.auth().onAuthStateChanged(user=>{
+            if(!appContext.isSet){
+                const u = new UserModel.UserModel(user)
+                setAppContext({...appContext,isSet:true,isLogged:user!==null,user_data:user?u:user})
+            }
+        })
     });
+    console.log(appContext.user_data)
 
     return (
         <AppContext.Provider value={[appContext, setAppContext]}>

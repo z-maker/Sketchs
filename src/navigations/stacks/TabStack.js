@@ -6,6 +6,7 @@ import { TouchableOpacity } from 'react-native-gesture-handler';
 import { Button, Icon } from 'react-native-elements';
 import ProfileScreen from '../../screens/main/ProfileScreen';
 import SplashScreen from '../../screens/SplashScreen';
+import { ColorProvider } from '../../styles';
 
 
 function MyTabBar({ state, descriptors, navigation }) {
@@ -58,14 +59,14 @@ function MyTabBar({ state, descriptors, navigation }) {
                         onLongPress={onLongPress}
                         style={{ flex: 1 }}
                     >
-                        <Icon color={isFocused ? '#ff8000' : '#1d1d1d'}
+                        <Icon color={isFocused ? ColorProvider.scheme.accent : '#1d1d1d'}
                             name={getIcon(label)}
                             type="font-awesome-5"
                             onPress={onPress}
                             onLongPress={onLongPress}
-                            iconStyle={{ fontSize: 30 }} />
+                            iconStyle={{ fontSize: 25,marginHorizontal:10 }} />
 
-                        <Text style={{ color: isFocused ? '#ff8000' : '#1d1d1d' }} >{label}</Text>
+                        {/* <Text style={{ color: isFocused ? '#ff8000' : '#1d1d1d' }} >{label}</Text> */}
 
                     </TouchableOpacity>
                 );
@@ -93,10 +94,8 @@ const getIcon = (string) => {
 
 const TabBarStyles = StyleSheet.create({
     container: {
-        height: 70,
-        minWidth: "80%",
         alignSelf: "center",
-        paddingHorizontal: 30,
+        paddingHorizontal: 10,
         paddingVertical: 10,
         backgroundColor: "white",
         borderRadius: 40,
@@ -115,7 +114,7 @@ export default function TabStack() {
     const Tab = createBottomTabNavigator()
 
     return (
-        <Tab.Navigator initialRouteName="Profile" tabBar={props => <MyTabBar {...props} />}>
+        <Tab.Navigator initialRouteName="Board" tabBar={props => <MyTabBar {...props} />}>
             <Tab.Screen name="Board" component={SplashScreen} />
             <Tab.Screen name="Search" component={SplashScreen} />
             <Tab.Screen name="Contact" component={SplashScreen} />

@@ -6,7 +6,7 @@ export const BOTTOM_TAB = scaleSizeH(100);
 export const W_HEIGHT = WINDOW_HEIGHT
 export const W_WIDTH = WINDOW_WIDTH
 
-export const INPUT_TEXT_RADIUS = 20
+export const INPUT_TEXT_RADIUS = 15
 export const INPUT_ELEVATION = 4
 
 export const ICON_SIZE = scaleSize(40);

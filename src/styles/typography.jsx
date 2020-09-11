@@ -12,12 +12,12 @@ export const FONT_WEIGHT_REGULAR = '400';
 export const FONT_WEIGHT_BOLD = '700';
 
 // FONT SIZE
-export const FONT_SIZE_H1 = scaleFont(25);
-export const FONT_SIZE_H2 = scaleFont(22);
-export const FONT_SIZE_H3 = scaleFont(20);
-export const FONT_SIZE_H4 = scaleFont(18);
-export const FONT_SIZE_H5 = scaleFont(16);
-export const FONT_SIZE_H6 = scaleFont(14);
+export const FONT_SIZE_H1 = scaleFont(22);
+export const FONT_SIZE_H2 = scaleFont(20);
+export const FONT_SIZE_H3 = scaleFont(18);
+export const FONT_SIZE_H4 = scaleFont(16);
+export const FONT_SIZE_H5 = scaleFont(14);
+export const FONT_SIZE_H6 = scaleFont(12);
 export const FONT_SIZE_P  = scaleFont(12);
 
 export const FONT_SIZE_INFO  = scaleFont(14);

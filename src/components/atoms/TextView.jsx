@@ -25,7 +25,7 @@ const getTextStyle = (props) => {
 const styles = StyleSheet.create({
     text:{
         fontFamily:Typography.FONT_FAMILY_REGULAR,
-        color:ColorProvider.scheme.textColor
+        
     },
     textCenter:{
         textAlign:"center"

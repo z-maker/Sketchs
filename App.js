@@ -7,7 +7,6 @@ import { ApplicationContext } from './src/components/providers/ApplicationContex
 import Navigation from './src/navigations/Navigation';
 
 
-
 export default function App() {
 
   useEffect(() => {
@@ -17,6 +16,7 @@ export default function App() {
   return (
     <ApplicationContext>
       <Navigation />
+      <StatusBar style="inverted" />
     </ApplicationContext>
   );
 }

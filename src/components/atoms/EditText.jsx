@@ -5,16 +5,16 @@ import { AppContext } from '../providers/ApplicationContext'
 
 export default function EditText(props) {
 
-    const { half, full, onChangeText, key, value, hint, secureTextEntry } = props
+    const { half, full, onChangeText, id, value, hint, secureTextEntry } = props
 
     const onTextChange = (text) => {
-        if (onChangeText) onChangeText(key, text)
+        if (onChangeText) onChangeText(id, text)
     }
 
     return (
         <View style={styles.container}>
             <TextInput style={styles.textInputStyle}
-                key={key}
+                key={id}
                 value={value}
                 placeholder={hint}
                 {...props}
@@ -28,7 +28,20 @@ export default function EditText(props) {
 const styles = StyleSheet.create({
     container: {
         backgroundColor: ColorProvider.scheme.inputTextBackground,
-        borderRadius: AppDimensions.INPUT_TEXT_RADIUS,
+        
+        borderBottomColor:ColorProvider.scheme.accent,
+        borderTopColor:ColorProvider.scheme.accent,
+        borderLeftColor:ColorProvider.scheme.accent,
+        borderRightColor:ColorProvider.scheme.accent,
+        
+        borderBottomRightRadius:AppDimensions.INPUT_TEXT_RADIUS,
+        borderBottomLeftRadius:AppDimensions.INPUT_TEXT_RADIUS,
+        borderTopLeftRadius:AppDimensions.INPUT_TEXT_RADIUS,
+        borderTopRightRadius:AppDimensions.INPUT_TEXT_RADIUS,
+        
+        
+
+        borderWidth:1,
         elevation: AppDimensions.INPUT_ELEVATION,
         marginVertical:Spacing.VERTICAL_MARGIN
     },

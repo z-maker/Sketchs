@@ -15,7 +15,7 @@ export const signAsAnonimusUser = async () =>{
  * @param  {String} email
  * @param  {String} password
  */
-export const createUserWihEmail = async (email, password) => {
+export const createUser = async (email, password) => {
     let user = null
     await firebase.auth().createUserWithEmailAndPassword(email,password)
     .then(result=>{

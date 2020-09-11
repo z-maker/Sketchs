@@ -1,14 +1,7 @@
 import firebase from 'firebase'
 
-const firebaseConfig = {
-    apiKey: "AIzaSyDybybQKALq6zBjw5U79BgZnI_6vLAJKzk",
-    authDomain: "sketch-s.firebaseapp.com",
-    databaseURL: "https://sketch-s.firebaseio.com",
-    projectId: "sketch-s",
-    storageBucket: "sketch-s.appspot.com",
-    messagingSenderId: "237290029898",
-    appId: "1:237290029898:web:90c5cfbe805fbacc4077b3",
-    measurementId: "G-XMXL2FEE5Y"
-};
+import firebase_config from '../../../env/firebase_config.json'
+
+const firebaseConfig = firebase_config
 
 export const FirebaseApp = firebase.initializeApp(firebaseConfig)
