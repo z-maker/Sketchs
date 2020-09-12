@@ -27,3 +27,16 @@ export const createUser = async (email, password) => {
 
     return user
 }
+
+/**
+ * @param  {JSON} data
+ */
+export const updateUser = async (data) => {
+
+    let res = null
+    await firebase.auth().currentUser.updateProfile(data).then(()=>{
+        res = true
+    })
+
+    return res
+}

@@ -1,4 +1,4 @@
-import { FirebaseAuth, FirebaseDatabase } from "../firebase"
+import { FirebaseAuth, FirebaseDatabase, FirebaseStorage } from "../firebase"
 
 export function UserModel(data) {
 
@@ -39,4 +39,17 @@ export const createUser = async (user) => {
 
 export const updateUser = async (data) => {
 
+}
+/**
+ * @param  {String} filepath
+ * @param  {String} name
+ */
+export const updateAvatar = async (filepath,name) =>{
+
+    const uri = await FirebaseStorage.uploadFile(filepath,FirebaseStorage.AVATARS_BASE_DIR,name)
+
+    const updateres = await FirebaseAuth.updateUser({photoURL:uri})
+
+    return uri
+    
 }

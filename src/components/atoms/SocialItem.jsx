@@ -9,8 +9,8 @@ export default function SocialItem(props) {
 
 
     return (
-        <View style={styles.container} > 
-            <Icon {...iconProps} />
+        <View style={StyleSheet.flatten([styles.container,props.containerStyle])} > 
+            <Icon {...iconProps}  />
             <TextView h4 center {...labelStyle} >{label}</TextView>
         </View>
     )
