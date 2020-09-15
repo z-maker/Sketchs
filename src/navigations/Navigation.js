@@ -6,6 +6,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import TabStack from './stacks/TabStack';
 import LoginStack from './stacks/LoginStack';
 import { AppContext } from '../components/providers/ApplicationContext';
+import SketchStack from './stacks/SketchStack';
 
 export default function Navigation() {
 
@@ -13,19 +14,26 @@ export default function Navigation() {
 
     const Stack = createStackNavigator()
 
-    return (
-        <NavigationContainer>
-            <Stack.Navigator headerMode="none">
-                {!appContext.isLogged &&
-                    <Stack.Screen name="splash" component={LoginStack} />
-                }
-                {appContext.isLogged &&
+    if (appContext.isLogged) {
+        return (
+            <NavigationContainer>
+                <Stack.Navigator headerMode="none">
                     <Stack.Screen name="main" component={TabStack} />
-                }
+                    <Stack.Screen name="sketch" component={SketchStack} />
+                </Stack.Navigator>
+            </NavigationContainer>
+        )
+    } else {
+        return (
+            <NavigationContainer>
+                <Stack.Navigator headerMode="none">
+                    <Stack.Screen name="splash" component={LoginStack} />
+                </Stack.Navigator>
+            </NavigationContainer>
+        )
+    }
 
-            </Stack.Navigator>
-        </NavigationContainer>
-    )
+
 }
 
 const styles = StyleSheet.create({})

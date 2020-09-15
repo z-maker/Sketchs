@@ -22,7 +22,6 @@ export const ApplicationContext = ({ children }) => {
             }
         })
     });
-    console.log(appContext.user_data)
 
     return (
         <AppContext.Provider value={[appContext, setAppContext]}>

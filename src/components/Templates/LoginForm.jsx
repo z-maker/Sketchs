@@ -11,7 +11,12 @@ import { useNavigation } from '@react-navigation/native'
 export default function LoginForm() {
 
     const Nav = useNavigation()
-    const [form, setform] = useState({})
+    const [form, setform] = useState({
+        email: "zero66694@gmail.com",
+        emailconfirm: "zero66694@gmail.com",
+        password: "Admin123!",
+        passwordconfirm: "Admin123!"
+    })
     const [isLoading, setisLoading] = useState(false)
 
     const onTextChange = (key,text) =>{
@@ -28,13 +33,13 @@ export default function LoginForm() {
     
     return (
         <View style={styles.container}>
-            <EditText editable={!isLoading} hint={"email"} id="email" onChangeText={onTextChange}/>
-            <EditText editable={!isLoading} hint="password" secureTextEntry id={"password"} onChangeText={onTextChange}/>
+            <EditText editable={!isLoading} value={form.email} hint={"email"} id="email" onChangeText={onTextChange}/>
+            <EditText editable={!isLoading} value={form.password} hint="password" secureTextEntry id={"password"} onChangeText={onTextChange}/>
             <RoundedButton loading={isLoading} title="Sign in" onPress={attemptRegister} />
-            <TextView center >OR</TextView>
+            <TextView center light>OR</TextView>
             <TextView center ></TextView>
             <SimpleLink onPress={()=>Nav.navigate("register")}>
-                <TextView center >Create an account</TextView>
+                <TextView center  light>Create an account</TextView>
             </SimpleLink>
         </View>
     )

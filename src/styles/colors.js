@@ -13,6 +13,12 @@ export const scheme = {
     WARNING:"#FFBB33",
     ERROR:"#FF4444",
     SUCCESS:"#00C851",
+
+    iconLight:"#fff",
+    iconPrimary:"#fff",
+    iconPrimaryDark:"#fff",
+    iconAccent:"#fff",
+    iconSeccondary:"#fff"
     
 }
 

@@ -87,10 +87,10 @@ export default function RegisterForm() {
             <EditText value={form.password} editable={!isLoading} hint="password" secureTextEntry id={"password"} onChangeText={onTextChange} />
             <EditText value={form.passwordconfirm} editable={!isLoading} hint="confirm password" onChangeText={onTextChange} secureTextEntry id={"passwordconfirm"} />
             <RoundedButton loading={isLoading} title="Sign up" onPress={attemptRegister} />
-            <TextView center >OR</TextView>
+            <TextView center light>OR</TextView>
             <TextView center ></TextView>
             <SimpleLink onPress={() => Nav.goBack()}>
-                <TextView center >I have an account</TextView>
+                <TextView center light>I have an account</TextView>
             </SimpleLink>
             <ToastView type="info" position="center" toastRef={toastRef} />
         </View>

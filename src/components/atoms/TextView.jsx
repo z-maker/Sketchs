@@ -14,9 +14,18 @@ const getTextStyle = (props) => {
 
     const align = getTextAlign(props)
     const tcolot = getTextColor(props)
+    const fsize =  getFontSize(props)
 
-    return StyleSheet.flatten([styles.text,align,tcolot])
+    return StyleSheet.flatten([styles.text,align,tcolot,fsize])
 
+}
+
+const getFontSize = (props) => {
+    const {title, subTitle, content} = props
+
+    if(title)return fontStyles.title
+    if(subTitle)return fontStyles.subTitle
+    if(content)return fontStyles.content
 }
 
 const getTextAlign = (props) => {
@@ -71,5 +80,17 @@ const styles = StyleSheet.create({
     },
     textJustify: {
         textAlign: "justify"
+    }
+})
+
+const fontStyles = StyleSheet.create({
+    title:{
+        fontSize:Typography.FONT_SIZE_H1
+    },
+    subTitle:{
+        fontSize:Typography.FONT_SIZE_H4
+    },
+    content:{
+        fontSize:Typography.FONT_SIZE_P
     }
 })
