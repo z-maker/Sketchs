@@ -2,13 +2,14 @@ import { useContext } from "react"
 import { AppContext } from "../components/providers/ApplicationContext"
 
 export const scheme = {
-    accent:"#9E75A0",
-    primary:"#5272A7",
-    primaryDark:"#0D2854",
-    inputTextBackground:"#313131",
+    accent:"#ff6600",
+    primary:"#00ccff",
+    primaryDark:"#00aad4",
+    inputTextBackground:"#1d1d1d",
     inputTextHint:"#cecece",
     textColor:"#fff",
-    backgroundColor:"#181818",
+    backgroundColor:"#1d1d1d",
+    black:"#000",
     INFO:"#0080ff",
     WARNING:"#FFBB33",
     ERROR:"#FF4444",

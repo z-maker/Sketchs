@@ -12,7 +12,7 @@ export default function SketchPicker(props) {
 
     const { callback, edit, source } = props
 
-    const [image, setimage] = useState(source ? { uri: source } : require('../../../assets/icon.png'))
+    const [image, setimage] = useState(source ? { uri: source } : require('../../../assets/images/image.png'))
 
     const pickPicture = async () => {
 
