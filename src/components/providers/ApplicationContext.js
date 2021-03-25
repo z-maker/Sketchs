@@ -21,7 +21,7 @@ export const ApplicationContext = ({ children }) => {
                 setAppContext({...appContext,isSet:true,isLogged:user!==null,user_data:user?u:user})
             }
         })
-    });
+    },[]);
 
     return (
         <AppContext.Provider value={[appContext, setAppContext]}>

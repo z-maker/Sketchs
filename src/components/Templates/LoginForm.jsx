@@ -6,6 +6,7 @@ import TextView from '../atoms/TextView'
 import { ColorProvider, AppDimensions } from '../../styles'
 import SimpleLink from '../atoms/SimpleLink'
 import { useNavigation } from '@react-navigation/native'
+import { UserModel } from '../../services/model/'
 
 
 export default function LoginForm() {
@@ -24,6 +25,10 @@ export default function LoginForm() {
     }
 
     const attemptRegister = async () => {
+
+        const user = await UserModel.loginUser(form.email, form.password)
+
+        console.log(user);
 
         setisLoading(true)
         setTimeout(()=>{

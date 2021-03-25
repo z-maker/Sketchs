@@ -58,6 +58,7 @@ function MyTabBar({ state, descriptors, navigation }) {
                         onPress={onPress}
                         onLongPress={onLongPress}
                         style={{ flex: 1 }}
+                        key={route.key}
                     >
                         <Icon color={isFocused ? ColorProvider.scheme.accent : '#1d1d1d'}
                             name={getIcon(label)}
@@ -115,10 +116,10 @@ export default function TabStack() {
 
     return (
         <Tab.Navigator initialRouteName="Board" tabBar={props => <MyTabBar {...props} />}>
-            <Tab.Screen name="Board" component={SplashScreen} />
-            <Tab.Screen name="Search" component={SplashScreen} />
-            <Tab.Screen name="Contact" component={SplashScreen} />
-            <Tab.Screen name="Profile" component={ProfileScreen} />
+            <Tab.Screen key="board" name="Board" component={SplashScreen} />
+            <Tab.Screen key="search" name="Search" component={SplashScreen} />
+            <Tab.Screen key="contact" name="Contact" component={SplashScreen} />
+            <Tab.Screen key="profile" name="Profile" component={ProfileScreen} />
         </Tab.Navigator>
     )
 }

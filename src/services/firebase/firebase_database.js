@@ -53,3 +53,22 @@ export const createSketch = async (data) => {
     return res
 
 }
+
+export const listSketch = async () => {
+    
+    let list = []
+
+    const db_ref = db.ref('sketchs')
+
+    const snapshot  = await db_ref.once('value')
+
+    console.log(snapshot)
+    await Promise.all(
+        snapshot.forEach(value => {
+            list.push(value)
+        })
+    )
+
+    return list
+
+}

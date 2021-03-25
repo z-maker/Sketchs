@@ -32,6 +32,18 @@ export const registerUser = async (email, password) => {
     return result
 }
 
+export const loginUser = async (email,password) => {
+    let result = null
+
+    result = await FirebaseAuth.loginUser(email, password)
+
+    if(!data){
+        return null
+    }
+
+    return result
+}
+
 export const createUser = async (user) => {
 
 }

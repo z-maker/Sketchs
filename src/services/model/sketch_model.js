@@ -46,3 +46,11 @@ export const create = async (data) => {
 
     return res
 }
+
+export const listSketch = async () => {
+    let list = null
+
+    const res = FirebaseDatabase.listSketch()
+
+    return res
+}

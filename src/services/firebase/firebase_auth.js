@@ -28,6 +28,24 @@ export const createUser = async (email, password) => {
     return user
 }
 
+
+export const loginUser = async (email, password) => {
+
+    let user = null
+
+    await firebase.auth().signInWithEmailAndPassword(email, password)
+    .then(result => {
+        user = result
+    })
+    .catch( e => {
+        console.warn(e);
+    })
+
+    return user
+
+}
+
+
 /**
  * @param  {JSON} data
  */
