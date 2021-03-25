@@ -48,9 +48,20 @@ export const create = async (data) => {
 }
 
 export const listSketch = async () => {
-    let list = null
+    let list = []
 
-    const res = FirebaseDatabase.listSketch()
+    const res = await FirebaseDatabase.listSketch()
 
-    return res
+    await Promise.all(res.map(item=>{
+        let sketch = new Sketch(item)
+        list.push(sketch)
+    }))
+
+    return list
+}
+
+export const listSketchListener = (callback) => {
+
+    return FirebaseDatabase.listSketchListener(callback)
+
 }

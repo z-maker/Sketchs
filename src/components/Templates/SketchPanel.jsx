@@ -5,12 +5,16 @@ import { useState } from 'react'
 import { ColorProvider } from '../../styles'
 import { useNavigation } from '@react-navigation/native'
 import { FirebaseDatabase } from '../../services/firebase'
+import SketchItem from '../molecules/SketchItem'
+import { FlatList } from 'react-native-gesture-handler'
 
-export default function ScketchPanel() {
+export default function SketchPanel() {
 
     const Nav = useNavigation()
 
     const [search, setsearch] = useState("")
+
+    const [list, setlist] = useState([])
 
     const updateSearch = (search) => {
         setsearch(search)
@@ -18,7 +22,7 @@ export default function ScketchPanel() {
 
     const getSketchList = async () => {
         const list = await FirebaseDatabase.listSketch()
-        console.log(list);
+        setlist(list)
     }
 
     useEffect(() => {
@@ -27,6 +31,16 @@ export default function ScketchPanel() {
         
         return () => {
 
+        }
+    }, [])
+
+    useEffect(() => {
+        
+        const s = FirebaseDatabase.listSketchListener((snap,ref)=>{
+            setlist([...list,snap.toJSON()])
+        })
+        return () => {
+            
         }
     }, [])
 
@@ -47,6 +61,16 @@ export default function ScketchPanel() {
                     type="font-awesome-5" containerStyle={{
                         margin: 20
                     }} />
+            </View>
+            <View style={{flex:1}} >
+                <FlatList
+                    style={{flex:1,width:"100%"}}
+                    data={list}
+                    renderItem={({item})=>(<SketchItem item={item} />)}
+                    keyExtractor={(item)=>item.filename}
+                >
+
+                </FlatList>
             </View>
         </View>
     )

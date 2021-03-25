@@ -62,13 +62,21 @@ export const listSketch = async () => {
 
     const snapshot  = await db_ref.once('value')
 
-    console.log(snapshot)
     await Promise.all(
         snapshot.forEach(value => {
-            list.push(value)
+            list.push(value.toJSON())
         })
     )
 
     return list
 
+}
+
+export const listSketchListener = (callback) => {
+
+    const db_ref = db.ref('sketchs')
+
+    db_ref.on('child_added',(snapshot)=>callback(snapshot,db_ref))
+
+    return db_ref
 }

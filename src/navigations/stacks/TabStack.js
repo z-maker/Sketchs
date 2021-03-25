@@ -115,7 +115,7 @@ export default function TabStack() {
     const Tab = createBottomTabNavigator()
 
     return (
-        <Tab.Navigator initialRouteName="Board" tabBar={props => <MyTabBar {...props} />}>
+        <Tab.Navigator initialRouteName="Profile" tabBar={props => <MyTabBar {...props} />}>
             <Tab.Screen key="board" name="Board" component={SplashScreen} />
             <Tab.Screen key="search" name="Search" component={SplashScreen} />
             <Tab.Screen key="contact" name="Contact" component={SplashScreen} />
